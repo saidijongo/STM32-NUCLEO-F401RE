@@ -16,3 +16,6 @@ https://www.ti.com/lit/ds/symlink/ucc27211a.pdf?ts=1718940861128&ref_url=https%2
 
 STM32 Nucleo-144/ STM32F756ZG MCU
 https://www.st.com/en/evaluation-tools/nucleo-f756zg.html
+
+Nucleo zip files
+https://drive.google.com/drive/folders/0B5LeqLuG9sGGS0hMZHZ2bm9mTFE?usp=sharing
