@@ -1,0 +1,144 @@
+Understanding and Using the STM32 Nucleo-F401RE Board Morpho Pins
+The STM32 Nucleo-F401RE board features Morpho headers that provide access to the microcontroller's I/O pins. These headers enable you to connect external devices like sensors, actuators, and other peripherals. Here’s a detailed guide on how to understand and use these pins effectively.
+
+Pinout Diagram
+The Morpho headers consist of four columns: two on the left side (CN7 and CN8) and two on the right side (CN5 and CN10). Each pin has a specific function, which may include GPIO (General Purpose Input/Output), PWM (Pulse Width Modulation), UART (Universal Asynchronous Receiver/Transmitter), SPI (Serial Peripheral Interface), I2C (Inter-Integrated Circuit), ADC (Analog to Digital Converter), and power supply pins.
+
+
+Left Side (CN7 and CN8)
+CN7:
+
+Pin 1 (PC10): General-purpose I/O
+Pin 2 (PC12): General-purpose I/O
+Pin 3 (VDD): Power supply (+3.3V)
+Pin 4 (PA13): SWDIO (debugging interface)
+Pin 5 (NRST): Reset
+Pin 6 (PA14): SWCLK (debugging interface)
+Pin 7 (PC0): General-purpose I/O
+Pin 8 (VSS): Ground
+Pin 9 (PA0): ADC_IN0, GPIO, UART4_TX
+Pin 10 (PC1): General-purpose I/O
+Pin 11 (PC2): General-purpose I/O
+Pin 12 (PC3): General-purpose I/O
+Pin 13 (PA1): ADC_IN1, GPIO, UART4_RX
+Pin 14 (PA4): ADC_IN4, GPIO
+Pin 15 (PA5): ADC_IN5, GPIO
+Pin 16 (PA6): ADC_IN6, GPIO
+Pin 17 (PA7): ADC_IN7, GPIO, TIM1_CH1N
+Pin 18 (PC4): General-purpose I/O
+Pin 19 (PC5): General-purpose I/O
+Pin 20 (PB0): ADC_IN8, GPIO, TIM1_CH2N
+Pin 21 (PB1): ADC_IN9, GPIO, TIM1_CH3N
+Pin 22 (PB2): BOOT1
+Pin 23 (PB10): General-purpose I/O
+Pin 24 (PB11): General-purpose I/O
+Pin 25 (PB12): General-purpose I/O
+Pin 26 (PB13): General-purpose I/O
+Pin 27 (PB14): General-purpose I/O
+Pin 28 (PB15): General-purpose I/O
+Pin 29 (PC6): General-purpose I/O
+Pin 30 (PC7): General-purpose I/O
+Pin 31 (PC8): General-purpose I/O
+Pin 32 (PC9): General-purpose I/O
+Pin 33 (PC10): General-purpose I/O
+Pin 34 (PC11): General-purpose I/O
+Pin 35 (PC12): General-purpose I/O
+Pin 36 (PD2): General-purpose I/O
+Pin 37 (PE0): General-purpose I/O
+Pin 38 (PE1): General-purpose I/O
+CN8:
+
+Pin 1 (IOREF): I/O reference voltage
+Pin 2 (RESET): Reset
+Pin 3 (+3V3): +3.3V power supply
+Pin 4 (5V): +5V power supply
+Pin 5 (GND): Ground
+Pin 6 (GND): Ground
+Pin 7 (VIN): External power supply input
+Pin 8 (A0/PA0): ADC_IN0, GPIO, UART4_TX
+Pin 9 (A1/PA1): ADC_IN1, GPIO, UART4_RX
+Pin 10 (A2/PA4): ADC_IN4, GPIO
+Pin 11 (A3/PA5): ADC_IN5, GPIO
+Pin 12 (A4/PA6): ADC_IN6, GPIO
+Pin 13 (A5/PA7): ADC_IN7, GPIO, TIM1_CH1N
+Right Side (CN5 and CN10)
+CN5:
+
+Pin 1 (PC9): General-purpose I/O
+Pin 2 (PC8): General-purpose I/O
+Pin 3 (PC7): General-purpose I/O
+Pin 4 (PC6): General-purpose I/O
+Pin 5 (PA9): UART1_TX, GPIO
+Pin 6 (PA10): UART1_RX, GPIO
+Pin 7 (PA11): USB DM
+Pin 8 (PA12): USB DP
+Pin 9 (PA15): TIM2_CH1, GPIO
+Pin 10 (PC10): General-purpose I/O
+Pin 11 (PC11): General-purpose I/O
+Pin 12 (PC12): General-purpose I/O
+Pin 13 (PD2): General-purpose I/O
+Pin 14 (PH0): General-purpose I/O
+Pin 15 (PH1): General-purpose I/O
+Pin 16 (PH2): General-purpose I/O
+Pin 17 (PH3): General-purpose I/O
+Pin 18 (PH4): General-purpose I/O
+Pin 19 (PH5): General-purpose I/O
+Pin 20 (PH6): General-purpose I/O
+Pin 21 (PH7): General-purpose I/O
+Pin 22 (PH8): General-purpose I/O
+Pin 23 (PH9): General-purpose I/O
+Pin 24 (PH10): General-purpose I/O
+Pin 25 (PH11): General-purpose I/O
+Pin 26 (PH12): General-purpose I/O
+Pin 27 (PH13): General-purpose I/O
+Pin 28 (PH14): General-purpose I/O
+Pin 29 (PH15): General-purpose I/O
+Pin 30 (PI0): General-purpose I/O
+Pin 31 (PI1): General-purpose I/O
+Pin 32 (PI2): General-purpose I/O
+Pin 33 (PI3): General-purpose I/O
+Pin 34 (PI4): General-purpose I/O
+Pin 35 (PI5): General-purpose I/O
+Pin 36 (PI6): General-purpose I/O
+Pin 37 (PI7): General-purpose I/O
+Pin 38 (PI8): General-purpose I/O
+CN10:
+
+Pin 1 (PC9): General-purpose I/O
+Pin 2 (PC8): General-purpose I/O
+Pin 3 (PC7): General-purpose I/O
+Pin 4 (PC6): General-purpose I/O
+Pin 5 (PA9): UART1_TX, GPIO
+Pin 6 (PA10): UART1_RX, GPIO
+Pin 7 (PA11): USB DM
+Pin 8 (PA12): USB DP
+Pin 9 (PA15): TIM2_CH1, GPIO
+Pin 10 (PC10): General-purpose I/O
+Pin 11 (PC11): General-purpose I/O
+Pin 12 (PC12): General-purpose I/O
+Pin 13 (PD2): General-purpose I/O
+Pin 14 (PH0): General-purpose I/O
+Pin 15 (PH1): General-purpose I/O
+Pin 16 (PH2): General-purpose I/O
+Pin 17 (PH3): General-purpose I/O
+Pin 18 (PH4): General-purpose I/O
+Pin 19 (PH5): General-purpose I/O
+Pin 20 (PH6): General-purpose I/O
+Pin 21 (PH7): General-purpose I/O
+Pin 22 (PH8): General-purpose I/O
+Pin 23 (PH9): General-purpose I/O
+Pin 24 (PH10): General-purpose I/O
+Pin 25 (PH11): General-purpose I/O
+Pin 26 (PH12): General-purpose I/O
+Pin 27 (PH13): General-purpose I/O
+Pin 28 (PH14): General-purpose I/O
+Pin 29 (PH15): General-purpose I/O
+Pin 30 (PI0): General-purpose I/O
+Pin 31 (PI1): General-purpose I/O
+Pin 32 (PI2): General-purpose I/O
+Pin 33 (PI3): General-purpose I/O
+Pin 34 (PI4): General-purpose I/O
+Pin 35 (PI5): General-purpose I/O
+Pin 36 (PI6): General-purpose I/O
+Pin 37 (PI7): General-purpose I/O
+Pin 38 (PI8): General-purpose I/O
